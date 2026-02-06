@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -43,7 +45,7 @@
             width: 100%;
             height: 100%;
             background: radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -67,6 +69,7 @@
                 opacity: 0;
                 transform: translateY(-20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -197,6 +200,13 @@
             margin-bottom: 24px;
         }
 
+        .project-description br {
+            content: "";
+            display: block;
+            margin-bottom: 200px;
+            /* Adjust this value */
+        }
+
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -215,6 +225,25 @@
             background: var(--primary-light);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .project-video {
+            margin: 24px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--dark);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-video iframe,
+        .project-video video {
+            display: block;
+            border-radius: 12px;
+        }
+
+        .project-video video {
+            width: 100%;
+            height: auto;
         }
 
         /* Contact Section */
@@ -265,6 +294,12 @@
             font-size: 18px;
         }
 
+        .contact-emoji svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -281,7 +316,8 @@
                 padding: 60px 24px;
             }
 
-            .about, .contact {
+            .about,
+            .contact {
                 padding: 32px 24px;
             }
 
@@ -300,22 +336,31 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>Your Name</h1>
-            <p class="tagline">Software Developer | Designer | Problem Solver</p>
+            <h1>Amogh Nyapathy</h1>
+            <p class="tagline">Game Developer | Online Software Engineer</p>
             <div class="decorative-divider"></div>
         </header>
 
         <!-- About Section -->
         <section class="about">
             <h2 class="section-title">About</h2>
-            <p>
-                I'm a [your role/title] passionate about creating elegant and functional digital solutions. 
-                With expertise in [technologies/skills], I focus on building products that make a difference. 
-                I'm driven by challenging problems and continuous learning.
+            <p class="project-description">
+                I'm Amogh Nyapathy, an Online Gameplay Programmer at EA Sports, where I develop and optimize multiplayer
+                systems for live service games. I hold a Master of Science in Interactive Entertainment from the Florida
+                Interactive Entertainment Academy.
+            <div style="height: 12px;"></div>
+            At FIEA, I worked in collaborative, studio-like environments building games with multidisciplinary
+            teams, which strengthened my ability to engineer elegant solutions in C++ while working closely with
+            artists, designers, and producers. This foundation prepared me for the fast-paced, player-focused nature
+            of AAA sports game development.
+            <div style="height: 12px;"></div>
+            Outside of work, I enjoy playing piano and staying engaged with the eSports community, which keeps me
+            connected to the gaming ecosystem and drives my passion for creating exceptional player experiences.
             </p>
         </section>
 
@@ -327,12 +372,22 @@
                     <div class="project-content">
                         <div class="project-header">
                             <span class="project-emoji">💻</span>
-                            <h3 class="project-title">Project Name One</h3>
+                            <h3 class="project-title">FIEA Game Engine </h3>
                         </div>
                         <p class="project-description">
-                            A brief description of your project. Explain the problem it solves, 
-                            the technologies used, and the impact it created. Focus on results and technical decisions.
+                            Engineered a custom content driven game engine in C++ from the bottom up, including ability
+                            to spawn game objects and have runtime events that can interact with anything in game.
+                        <div style="height: 12px;"></div>
+                        Built a Bloons TD5 Clone using this Game Engine, of which I was responsible for setting up
+                        the rendering framework and developed the UI Systems that could trigger events to facilitate
+                        gameplay.
                         </p>
+                        <div class="project-video">
+                            <video controls width="100%">
+                                <source src="content/btd5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
@@ -342,12 +397,22 @@
                     <div class="project-content">
                         <div class="project-header">
                             <span class="project-emoji">🚀</span>
-                            <h3 class="project-title">Project Name Two</h3>
+                            <h3 class="project-title">Pokemon Mystery Dungeon Clone</h3>
                         </div>
-                        <p class="project-description">
-                            Another project description highlighting your technical approach, 
-                            challenges overcome, and measurable outcomes or improvements achieved.
+                        <p class="project-description">Built a Pokémon Mystery Dungeon in pure C, while working with
+                            virtual OOP concepts by creating class like structures in C. The game required us to come up
+                            with custom physics and collision detection system.
+                            <div style="height: 12px;"></div>
+                            This is currently being reworked in 
+                            <a href="https://github.com/Amogh2211/PokemonMD-CPP" target="_blank">this</a>
+                             repository - more details to come. 
                         </p>
+                        <div class="project-video">
+                            <video controls width="100%">
+                                <source src="content/pkmd-recording.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
                         <a href="#" class="project-link">View Project →</a>
                     </div>
                 </div>
@@ -360,7 +425,7 @@
                             <h3 class="project-title">Project Name Three</h3>
                         </div>
                         <p class="project-description">
-                            Your third project description. Emphasize your role, the technologies involved, 
+                            Your third project description. Emphasize your role, the technologies involved,
                             and what you learned from the experience.
                         </p>
                         <a href="#" class="project-link">View Project →</a>
@@ -375,23 +440,19 @@
         <section class="contact">
             <h2 class="section-title">Get In Touch</h2>
             <p>Let's connect and discuss opportunities</p>
-            
+
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-link">
-                    <span class="contact-emoji">✉️</span>
+                <a href="mailto:nyapathyamogh@gmail.com" class="contact-link">
+                    <i class="fa-brands fa-google contact-emoji"></i>
                     Email
                 </a>
-                <a href="https://github.com/yourusername" class="contact-link" target="_blank">
-                    <span class="contact-emoji">💻</span>
+                <a href="https://github.com/Amogh2211" class="contact-link" target="_blank">
+                    <i class="fa-brands fa-github contact-emoji"></i>
                     GitHub
                 </a>
-                <a href="https://linkedin.com/in/yourusername" class="contact-link" target="_blank">
-                    <span class="contact-emoji">💼</span>
+                <a href="https://www.linkedin.com/in/amogh-n-1365b6ab/" class="contact-link" target="_blank">
+                    <i class="fa-brands fa-linkedin contact-emoji"></i>
                     LinkedIn
-                </a>
-                <a href="https://twitter.com/yourusername" class="contact-link" target="_blank">
-                    <span class="contact-emoji">🐦</span>
-                    Twitter
                 </a>
             </div>
         </section>
@@ -402,4 +463,5 @@
         </footer>
     </div>
 </body>
+
 </html>
